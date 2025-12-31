@@ -103,9 +103,27 @@
 </head>
 <body>
 
-  <audio autoplay loop>
-    <source src="talking_to_the_moon.mp3" type="audio/mpeg">
-  </audio>
+ <audio id="musica" loop>
+  <source src="talking_to_the_moon.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('musica').play()" 
+style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #b3005e;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+">
+▶ Tocar música
+</button>
+
 
   <header>
     <div>
