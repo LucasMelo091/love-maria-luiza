@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Luiza ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 2s ease;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #b3005e;
+    }
+    header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      color: #b3005e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.6s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .surprise {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #b3005e;
+      margin-top: 80px;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+    .surprise.show {
+      opacity: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="talking_to_the_moon.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <div>
+      <h1>Maria Luiza ❤️</h1>
+      <p>Um site simples para representar algo enorme: o que sinto por você</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Nossa História</h2>
+      <p>
+        Em apenas 6 meses, você transformou minha vida de uma forma que eu nunca imaginei.
+        O que começou de forma simples se tornou algo cheio de carinho, cuidado e, acima de tudo, reciprocidade.
+        Estar com você é leve, é verdadeiro e é exatamente onde eu quero estar.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>O que sinto por você</h2>
+      <p>
+        Maria Luiza, você é calmaria e intensidade ao mesmo tempo.
+        Seu carinho, sua atenção e a forma como você demonstra o que sente fazem tudo valer a pena.
+        Esse site é só um detalhe perto do que você representa pra mim, mas é uma forma de eternizar o que estamos construindo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Nossos Momentos</h2>
+      <p>Alguns espaços reservados para fotos que contam a nossa história 📸</p>
+      <div class="gallery">
+        <img src="foto1.jpg" alt="Maria Luiza e eu - momento especial">
+        <img src="foto2.jpg" alt="Nossos anéis e nossa fé">
+        <img src="foto3.jpg" alt="Juntos em mais um momento importante">
+        <img src="foto4.jpg" alt="Um dia simples, mas cheio de amor">
+      </div>
+        <div>Foto 2</div>
+        <div>Foto 3</div>
+        <div>Foto 4</div>
+      </div>
+    </div>
+      <div class="surprise" id="surprise">
+      "Enquanto o mundo dorme, meu coração conversa com o seu."
+    </div>
+  </section>
+
+  <footer>
+    Feito com ❤️ exclusivamente para Maria Luiza
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const surprise = document.getElementById('surprise');
+
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.85;
+
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < trigger) {
+          card.classList.add('show');
+        }
+      });
+
+      const surpriseTop = surprise.getBoundingClientRect().top;
+      if (surpriseTop < trigger) {
+        surprise.classList.add('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
